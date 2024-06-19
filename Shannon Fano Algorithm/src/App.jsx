@@ -99,7 +99,7 @@ function App() {
       {result?.length > 0 && (
         <>
           <p className="title">Final Result:</p>
-          <div className="start-point-symbols">
+          <div className="start-point-symbols result">
             {result.map((s, index) => (
               <div className="symbol" key={index}>
                 <span className="symbol-name">
@@ -115,7 +115,7 @@ function App() {
                   )}
                 </span>
 
-                <span className="symbol-probability">{s.code}</span>
+                <span className="symbol-code">{s.code}</span>
               </div>
             ))}
           </div>

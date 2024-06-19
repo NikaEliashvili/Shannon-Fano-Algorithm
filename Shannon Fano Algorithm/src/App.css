@@ -78,7 +78,7 @@ input {
 }
 
 .symbol {
-  padding: 0.15rem 1.25rem 0.25rem;
+  padding: 0.15rem 0.75rem 0.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,16 +96,21 @@ input {
 }
 
 
-.symbol-code {
-  color: rgb(75, 186, 242);
+.symbol-code,
+.symbol-probability {
+  position: relative;
   font-size: 0.85rem;
   font-weight: 600;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 0.1rem 0.75rem;
+  border-radius: 0.25rem;
 }
 
-.symbol-probability {
-  font-weight: 300;
-  font-size: 0.75rem;
+.symbol-code {
+  color: rgb(75, 186, 242);
 }
+
 
 .steps {
   padding: 2rem 0;
@@ -121,7 +126,7 @@ input {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 3rem;
   border-radius: 0.5rem;
   border: 2px solid rgba(49, 115, 222, 0.15);
   background: rgba(49, 115, 222, 0.07);
@@ -142,6 +147,14 @@ input {
   gap: 1rem;
 }
 
+.start-point-symbols.result {
+  border-color: rgba(81, 240, 184, 0.35);
+  background: rgba(81, 240, 184, 0.0125);
+}
+
+.start-point-symbols.result .symbol-code {
+  color: rgba(81, 240, 184, 1);
+}
 
 
 @keyframes step {
