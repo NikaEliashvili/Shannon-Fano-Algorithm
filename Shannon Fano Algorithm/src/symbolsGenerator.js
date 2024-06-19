@@ -18,8 +18,13 @@ export const generateSymbols = (str) => {
 
   // Convert frequency map to symbols array
   freqMap.forEach((frequency, symbol) => {
-    symbols.push({ symbol, probability: frequency });
+    symbols.push({
+      symbol,
+      probability: frequency,
+      code: [],
+      codeIndex: -1,
+    });
   });
 
-  return symbols;
+  return symbols.sort((a, b) => a.probability - b.probability);
 };

@@ -1,18 +1,16 @@
 .App {
-  width: 100%;
   margin: auto;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  padding: 2rem 1rem;
 }
 
 
 .input-container {
-  margin-top: 4rem;
-  width: 100%;
+  width: 90%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -47,68 +45,121 @@ input {
 
 
 .shannon-fano-container {
-  width: 100%;
+  width: 90%;
   margin-top: 4rem;
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
 }
 
 .button-container {
-  /* width: 100%; */
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
 }
 
-
-.symbol-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.title {
+  width: 90%;
+  padding: 0 0.5rem;
+  margin-top: 3rem;
+  font-weight: 600;
 }
 
+.start-point-symbols {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 90%;
+  border: 2px solid rgba(255, 255, 255, 0.03);
+  padding: 0.5rem;
+  border-radius: 0.35rem;
+}
 
 .symbol {
-  width: 100% !important;
-  color: rgba(255, 255, 255, 1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 5px;
+  padding: 0.15rem 1.25rem 0.25rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: fit-content;
-  flex-grow: 1;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 0.35rem;
-  font-size: 1.5rem;
-}
-
-.symbol-name {
-  font-weight: bold;
-}
-
-.symbol-code,
-.symbol-probability,
-.symbol-name {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  flex-grow: 1;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
 }
 
-.symbol-probability {
-  text-align: right;
-  width: 30px;
-  text-size-adjust: 30px;
+.symbol-name {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 20px;
+  color: white;
 }
 
 
 .symbol-code {
-  flex-basis: 0px;
-  justify-content: flex-end;
-  text-align: right;
-  font-family: monospace;
-  color: #aaa8a8;
+  color: rgb(75, 186, 242);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.symbol-probability {
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+.steps {
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(49, 115, 222, 0.15);
+  background: rgba(49, 115, 222, 0.07);
+  box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  animation: step linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 25%;
+}
+
+.step-title,
+.step>p {
+  margin: 0;
+}
+
+.step-symbols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+
+@keyframes step {
+  0% {
+    filter: opacity(0);
+    transform: translate3d(-400%, 0, 0) scale(0);
+    z-index: -1;
+  }
+
+  25% {
+    filter: opacity(0);
+    transform: translate3d(-100%, 0, 0) scale(0);
+    z-index: +1;
+  }
+
+  100% {
+    filter: opacity(1);
+    transform: translate3d(0, 0, 0) scale(1);
+    z-index: +1;
+  }
 }
